@@ -1,0 +1,20 @@
+.board{
+    display:grid;
+    grid-template-columns: repeat(8,60px);
+    grid-template-rows: repeat(8,60px);
+    border:1px solid grey
+
+
+}
+.black{
+    background-color:black;
+    
+}
+.white{
+    background-color: white;
+    border-style:outset;
+    border-color: 1px grey;
+}
+.square{
+    display:none;
+}
