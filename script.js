@@ -1,10 +1,11 @@
 
-b=[]
-board=document.querySelector(".board");
+board=[]
+b=document.querySelector(".board");
 for(i=1;i<9;i++){
     for (j=1;j<9;j++) {
       const p=document.createElement("div");
-       b.push([i,j]);
+      p.id=`${i}${j}`;
+       board.push([i,j]);
         if((i+j)%2==0){
 
             p.classList.add("white");
@@ -12,6 +13,7 @@ for(i=1;i<9;i++){
         else{
             p.classList.add("black");
         }
-        board.appendChild(p);
+        b.appendChild(p);
     }
 }
+console.log(b);
