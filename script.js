@@ -1,11 +1,15 @@
 
-board=[]
-b=document.querySelector(".board");
-for(i=1;i<9;i++){
-    for (j=1;j<9;j++) {
+let board=[]
+let b=document.querySelector(".board");
+for(i=8;i>0;i--){
+    row=[]
+    for (j=8;j>0;j--) {
       const p=document.createElement("div");
-      p.id=`${i}${j}`;
-       board.push([i,j]);
+      p.id=`${i}-${j}`;
+       let square={
+         coordinate:[i,j],
+         piece:"None"
+       }
         if((i+j)%2==0){
 
             p.classList.add("white");
@@ -14,6 +18,68 @@ for(i=1;i<9;i++){
             p.classList.add("black");
         }
         b.appendChild(p);
+        row.push(square)
     }
+    board.push(row)
 }
-console.log(b);
+pieces=[{
+    type:"pawn",
+    color:"black",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"pawn",
+    color:"white",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"rook",
+    color:"black",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"knight",
+    color:"black",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"bishop",
+    color:"black",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"queen",
+    color:"black",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"king",
+    color:"black",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"king",
+    color:"white",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"queen",
+    color:"white",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"bishop",
+    color:"white",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"knight",
+    color:"white",
+    current:[1,1],
+    has_moved:"None"},
+    {
+    type:"rook",
+    color:"white",
+    current:[1,1],
+    has_moved:"None"},
+]
