@@ -1,11 +1,14 @@
+*{
+    box-sizing:border-box;
+}
 .board{
     display:grid;
     grid-template-columns: repeat(8,60px);
     grid-template-rows: repeat(8,60px);
     width: 480px;
+    height: 480px;
     border:1px solid grey;
-
-
+    overflow:hidden;
 }
 .black{
     background-color:black;
@@ -15,4 +18,10 @@
     background-color: white;
     border-style:outset;
     border-color: 1px grey;
+}
+.piece img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    display: block;
 }

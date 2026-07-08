@@ -1,85 +1,15 @@
+ import {createBoard} from "./static/js/board.js";
+ import {pieceset} from "./static/js/pieceset.js"
+ import {showState} from "./static/js/state.js"
+ let board=createBoard();
+ document.addEventListener("click",function(e){
+     console.log(e.target.id);
+ }
 
-let board=[]
-let b=document.querySelector(".board");
-for(i=8;i>0;i--){
-    row=[]
-    for (j=8;j>0;j--) {
-      const p=document.createElement("div");
-      p.id=`${i}-${j}`;
-       let square={
-         coordinate:[i,j],
-         piece:"None"
-       }
-        if((i+j)%2==0){
+)
+showState();
 
-            p.classList.add("white");
-        }
-        else{
-            p.classList.add("black");
-        }
-        b.appendChild(p);
-        row.push(square)
-    }
-    board.push(row)
-}
-pieces=[{
-    type:"pawn",
-    color:"black",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"pawn",
-    color:"white",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"rook",
-    color:"black",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"knight",
-    color:"black",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"bishop",
-    color:"black",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"queen",
-    color:"black",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"king",
-    color:"black",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"king",
-    color:"white",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"queen",
-    color:"white",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"bishop",
-    color:"white",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"knight",
-    color:"white",
-    current:[1,1],
-    has_moved:"None"},
-    {
-    type:"rook",
-    color:"white",
-    current:[1,1],
-    has_moved:"None"},
-]
+
+
+                    
+

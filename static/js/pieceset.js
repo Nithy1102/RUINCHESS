@@ -1,0 +1,55 @@
+export function pieceset(){
+let pieceset=
+[
+    {
+    type:"pawn",
+    color:"black",
+    image:"./static/images/bp.png"},
+    {
+    type:"rook",
+    color:"black",
+    image:"./static/images/br.png"},
+    {
+    type:"knight",
+    color:"black",
+    image:"./static/images/bn.png"},
+    {
+    type:"bishop",
+    color:"black",
+    image:"./static/images/bb.png"},
+    {
+    type:"queen",
+    color:"black",
+    image:"./static/images/bq.png"},
+    {
+    type:"king",
+    color:"black",
+    image:"./static/images/bk.png"},
+    {
+    type:"king",
+    color:"white",
+    image:"./static/images/wk.png"},
+    {
+    type:"queen",
+    color:"white",
+    image:"./static/images/wq.png"},
+    {
+    type:"bishop",
+    color:"white",
+    image:"./static/images/wb.png"},
+    {
+    type:"knight",
+    color:"white",
+    image:"./static/images/wn.png"},
+    {
+    type:"rook",
+    color:"white",
+    image:"./static/images/wr.png"},
+    {
+    type:"pawn",
+    color:"white",
+    image:"./static/images/wp.png"}
+]
+
+return pieceset;
+}
