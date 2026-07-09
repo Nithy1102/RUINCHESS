@@ -55,9 +55,9 @@ export function pieces(){
         },
           
         {name:"blackrook2",
-                type:piece[10].type,
-                image:piece[10].image,
-                color:piece[10].color,
+                type:piece[1].type,
+                image:piece[1].image,
+                color:piece[1].color,
                 position:[8,8],
                 hasMoved:"none"
         },

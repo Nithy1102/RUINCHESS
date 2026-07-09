@@ -3,22 +3,22 @@ import {pieces} from "./pieces.js"
 export function createBoard(){
 let board=[]
 let b=document.querySelector(".board");
-for(let i=8;i>0;i--){
+for(let i=1;i<9;i++){
     let row=[]
     for (let j=1;j<9;j++) {
       const p=document.createElement("div");
-      p.id=`${j}-${i}`;
+      p.id=`${i}-${j}`;
       p.classList.add("square");
        let square={
-         coordinate:[j,i],
+         coordinate:[i,j],
          piece:"None"
        }
-        if((i+j)%2==0){
+        if((i+j)%2!=0){
 
-            p.classList.add("white");
+            p.classList.add("black");
         }
         else{
-            p.classList.add("black");
+            p.classList.add("white");
         }
         b.appendChild(p);
         row.push(square)
