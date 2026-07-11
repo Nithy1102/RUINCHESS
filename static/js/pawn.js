@@ -12,11 +12,12 @@ export function pawn(value){
        possible.push([x-1,y]);
     } 
     if(s.piece.color=='black'){
-       if(piece.hasMoved=="none"){
+       if(s.piece.hasMoved=="none"){
          possible.push([x+2,y])
         }
        possible.push([x+1,y]);
     }
+    console.log(possible);
     let l=legal(possible);
     return l;
 
