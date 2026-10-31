@@ -1,23 +1,12 @@
- import {createBoard} from "./static/js/board.js";
- import {pieceset} from "./static/js/pieceset.js"
- import {showState} from "./static/js/state.js"
- import {handlerGame} from "./static/js/highlighter.js"
-
- let board=createBoard();
- let alreadySelected=null;
- let currselected_id=null;
- document.addEventListener("click",function(e){
-     let selected_id=e.target.id;
-     handlerClick(selected_id);
- }
-)
-function handlerClick(id){
-    currselected_id=id;
-    alreadySelected=handlerGame(currselected_id,alreadySelected);
+const board = document.getElementById("board");
+for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+        const cell = document.createElement("div");
+        if ((r + c) % 2 === 0) {
+            cell.classList.add("light");
+        } else {
+            cell.classList.add("dark");
+        }
+        board.appendChild(cell);
+    }
 }
-
-showState();
-
-
-                    
-
