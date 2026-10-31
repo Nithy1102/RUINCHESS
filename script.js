@@ -1,23 +1,58 @@
- import {createBoard} from "./static/js/board.js";
- import {pieceset} from "./static/js/pieceset.js"
- import {showState} from "./static/js/state.js"
- import {handlerGame} from "./static/js/highlighter.js"
 
- let board=createBoard();
- let alreadySelected=null;
- let currselected_id=null;
- document.addEventListener("click",function(e){
-     let selected_id=e.target.id;
-     handlerClick(selected_id);
- }
-)
-function handlerClick(id){
-    currselected_id=id;
-    alreadySelected=handlerGame(currselected_id,alreadySelected);
+const symbols = {
+    "bR": "♜",
+    "bN": "♞",
+    "bB": "♝",
+    "bQ": "♛",
+    "bK": "♚",
+    "bP": "♟",
+    "wR": "♖",
+    "wN": "♘",
+    "wB": "♗",
+    "wQ": "♕",
+    "wK": "♔",
+    "wP": "♙"
+};
+const boardData=[
+                  ["bR","bN","bB","bQ","bK","bB","bN","bR"],
+                  ["bP","bP","bP","bP","bP","bP","bP","bP"],
+                  [null,null,null,null,null,null,null,null],
+                  [null,null,null,null,null,null,null,null],
+                  [null,null,null,null,null,null,null,null],
+                  [null,null,null,null,null,null,null,null],
+                  ["wP","wP","wP","wP","wP","wP","wP","wP"],
+                  ["wR","wN","wB","wQ","wK","wB","wN","wR"] ];
+                  [{piece:symbols["wP"]},{piece:symbols["wP"]},{piece:symbols["wP"]},{piece:symbols["wP"]},{piece:symbols["wP"]},{ piece:symbols["wP"] },{ piece:symbols["wP"] },{ piece:symbols["wP"] }],
+                  [{ piece:symbols["wR"] },{ piece:symbols["wN"] },{ piece:symbols["wB"] },{ piece:symbols["wQ"] },{ piece:symbols["wK"] },{ piece:symbols["wB"] },{ piece:symbols["wN"] },{ piece:symbols["wR"] }] ;
+function createBoard() {
+const board = document.getElementById("board");
+for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+        const cell = document.createElement("div");
+        cell.dataset.row = r;
+        cell.dataset.col = c;
+        cell.classList.add("square");
+        if ((r + c) % 2 === 0) {
+            cell.classList.add("light");
+        } else {
+            cell.classList.add("dark");
+        }
+        board.appendChild(cell);
+    }
+}}
+
+
+function renderpieces() {
+const board = document.getElementById("board");
+
+for (let r = 0; r < 8; r++) {
+    for (let c = 0; c < 8; c++) {
+        const cell = board.children[r * 8 + c];
+        if (boardData[r][c]) {
+            cell.textContent = symbols[boardData[r][c]];
+        }
+    }
 }
-
-showState();
-
-
-                    
-
+}
+createBoard();
+renderpieces(); 
