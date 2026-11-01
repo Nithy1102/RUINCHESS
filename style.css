@@ -19,3 +19,17 @@
     align-items: center;
     justify-content: center;
 }
+.selected{
+    outline: 3px solid gold; 
+    outline-offset: -3px;
+}
+
+#status {
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f0d9b5;
+    width: 480px;
+    outline: 1px solid black;
+}
